@@ -1,0 +1,16 @@
+name: "Github Action Test"
+
+
+on:
+  push:
+
+jobs:
+  bot:
+    runs-on: unbuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: pip install python-telegram-bot
+      - name: Run python script
+        run: python time1.py
+        env:
+        TOKEN: ${{secrets.TOKEN}}
